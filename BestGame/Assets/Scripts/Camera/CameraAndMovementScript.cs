@@ -92,22 +92,27 @@ public class CameraAndMovementScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 200))
         {
             if(hit.transform!=debugMousePositionSphere)
-           debugMousePositionSphere.position = hit.point;
+            debugMousePositionSphere.position = hit.point;
         }
 
-        Transform col = debugSphereCollissionDetection.collider;
-        if(col==null){return;}
-        if(col.tag=="Ground")
+        foreach(Collider c in debugSphereCollissionDetection.colliders)
         {
-            if(col.tag!="PlacementObst")
+            if(c.transform.tag=="Ground")
             {
-
                 sphereMeshRenderer.material = debugCorrectMaterial;
+            }
+            else if(c.transform.tag=="PlacementObst")
+            {
+                sphereMeshRenderer.material = debugWrongMaterial;
                 return;
             }
+
         }
 
-        sphereMeshRenderer.material = debugWrongMaterial;
+
+        
+
+        
     }
 
 }
