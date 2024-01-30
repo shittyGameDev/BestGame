@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f06a6ae61e872343b3e1d2d5d570f76, type: 3}
-  m_Name: SpawnerData
+  m_Name: SpawnerData2
   m_EditorClassIdentifier: 
   enemySets:
-  - enemyPrefab: {fileID: 3597357464010090516, guid: f4c77efb164c45645bb401df25ebd0b1,
+  - enemyPrefab: {fileID: 3673863213886380781, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
       type: 3}
     amount: 3
-  - enemyPrefab: {fileID: 3597357464010090516, guid: f4c77efb164c45645bb401df25ebd0b1,
+  - enemyPrefab: {fileID: 3673863213886380781, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
       type: 3}
     amount: 3
-  - enemyPrefab: {fileID: 3597357464010090516, guid: f4c77efb164c45645bb401df25ebd0b1,
+  - enemyPrefab: {fileID: 3673863213886380781, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
       type: 3}
     amount: 3
   timeBetweenSets: 20
