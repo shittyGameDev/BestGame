@@ -379,7 +379,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 885cf99500239a44e8b36b1da65277d3, type: 2}
   - {fileID: 11400000, guid: 76cb84c3ba321bd41880aadbde05bc03, type: 2}
   - {fileID: 11400000, guid: aa51fc5f50673d4418ad479a600eb9ca, type: 2}
+  - {fileID: 11400000, guid: aa51fc5f50673d4418ad479a600eb9ca, type: 2}
   currentWaveIndex: 0
+  activeEnemies: 0
 --- !u!4 &386582587
 Transform:
   m_ObjectHideFlags: 0
