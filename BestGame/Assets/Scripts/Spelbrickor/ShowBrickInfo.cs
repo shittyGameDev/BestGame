@@ -18,6 +18,7 @@ public class ShowBrickInfo : MonoBehaviour
         brickInfoCanvas.SetActive(false);
     }
 
+
     private void OnMouseEnter()
     {
         brickInfoCanvas.SetActive(true);
@@ -28,6 +29,7 @@ public class ShowBrickInfo : MonoBehaviour
     {
         brickInfoCanvas.SetActive(false);
     }
+
 
     // Uppdaterar positionen för panelen och placerar den ovanför brickan med en offset
     private void UpdatePanelPosition()
