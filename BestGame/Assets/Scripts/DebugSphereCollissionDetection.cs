@@ -5,9 +5,19 @@ using UnityEngine;
 
 public class DebugSphereCollissionDetection : MonoBehaviour
 {
-    public Transform collider;
-    private void OnTriggerStay(Collider col)
+    private List<Collider> cols=new List<Collider>();
+    public Collider[] colliders;
+    private void OnTriggerEnter(Collider col)
     {
-        collider = col.transform;
+        cols.Add(col);
+
+        colliders = cols.ToArray();
+
+    }
+    private void OnTriggerExit(Collider col)
+    {
+        cols.Remove(col);
+        colliders = cols.ToArray();
+
     }
 }
