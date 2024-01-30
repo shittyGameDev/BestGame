@@ -23,6 +23,21 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.Playing);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (state == GameState.Playing)
+            {
+                UpdateGameState(GameState.Paused);
+            }
+            else if (state == GameState.Paused)
+            {
+                UpdateGameState(GameState.Playing);
+            }
+        }
+    }
+
     public void UpdateGameState(GameState newState)
     {
         this.state = newState;
