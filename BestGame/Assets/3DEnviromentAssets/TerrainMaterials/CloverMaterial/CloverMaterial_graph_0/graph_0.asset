@@ -1,0 +1,519 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_0
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/3DEnviromentAssets/TerrainMaterials/CloverMaterial/CloverMaterial.sbsar
+  RawData: {fileID: -244192453324840774, guid: 6c0be89889c51c54b9fc32c7a239c3e1, type: 3}
+  Name: graph_0
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: 1ab30e6b-148e-42c2-be01-4b54bd9c8217
+  Index: 0
+  Input:
+  - rid: 8280727310722662402
+  - rid: 8280727310722662403
+  - rid: 8280727310722662404
+  - rid: 8280727310722662405
+  - rid: 8280727310722662406
+  - rid: 8280727310722662407
+  - rid: 8280727310722662408
+  - rid: 8280727310722662409
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: normalScale
+      Label: normalScale
+      Index: 0
+      Type: 0
+      Channel: normalScale
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 1
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: combineNormalAndHeight
+      Label: combineNormalAndHeight
+      Index: 1
+      Type: 4
+      Channel: combineNormalAndHeight
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 2
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: heightScale
+      Label: heightScale
+      Index: 2
+      Type: 0
+      Channel: heightScale
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 3
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: heightLevel
+      Label: heightLevel
+      Index: 3
+      Type: 0
+      Channel: heightLevel
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 4
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: emissionIntensity
+      Label: emissionIntensity
+      Index: 4
+      Type: 0
+      Channel: emissiveIntensity
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 5
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: subsurfaceScattering
+      Label: subsurfaceScattering
+      Index: 5
+      Type: 4
+      Channel: scatter
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 6
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: scatteringDistance
+      Label: scatteringDistance
+      Index: 6
+      Type: 0
+      Channel: scatteringDistance
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 7
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: redShift
+      Label: redShift
+      Index: 7
+      Type: 0
+      Channel: scatteringRedShift
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 8
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: rayleighScattering
+      Label: rayleighScattering
+      Index: 8
+      Type: 0
+      Channel: scatteringRayleigh
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 9
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: absorptionDistance
+      Label: absorptionDistance
+      Index: 9
+      Type: 0
+      Channel: absorptionDistance
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 10
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: indexOfRefraction
+      Label: indexOfRefraction
+      Index: 10
+      Type: 0
+      Channel: IOR
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 11
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: coatIndexOfRefraction
+      Label: coatIndexOfRefraction
+      Index: 11
+      Type: 0
+      Channel: coatIOR
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 12
+    VirtualOutputIndex: 0
+    Description:
+      Identifier: coatNormalScale
+      Label: coatNormalScale
+      Index: 12
+      Type: 0
+      Channel: coatNormalScale
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 13
+    VirtualOutputIndex: 19
+    Description:
+      Identifier: basecolor
+      Label: basecolor
+      Index: 13
+      Type: 8
+      Channel: baseColor
+    OutputTexture: {fileID: 2800000, guid: 4e69a8fc508b27f48a6544fac9b8eaf6, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _BaseColorMap
+  - Index: 14
+    VirtualOutputIndex: 20
+    Description:
+      Identifier: normal
+      Label: normal
+      Index: 14
+      Type: 8
+      Channel: normal
+    OutputTexture: {fileID: 2800000, guid: 93b5b6c49d3203e45a2ccb13eb6bf382, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _NormalMap
+  - Index: 15
+    VirtualOutputIndex: 21
+    Description:
+      Identifier: roughness
+      Label: roughness
+      Index: 15
+      Type: 8
+      Channel: roughness
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _RoughnessMap
+  - Index: 16
+    VirtualOutputIndex: 22
+    Description:
+      Identifier: height
+      Label: height
+      Index: 16
+      Type: 8
+      Channel: height
+    OutputTexture: {fileID: 2800000, guid: efdf5fc3b611ea94e8bcb86199a3f764, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _HeightMap
+  - Index: 17
+    VirtualOutputIndex: 23
+    Description:
+      Identifier: ambientocclusion
+      Label: ambientocclusion
+      Index: 17
+      Type: 8
+      Channel: ambientOcclusion
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _OcclusionMap
+  - Index: 18
+    VirtualOutputIndex: 18
+    Description:
+      Identifier: mask
+      Label: mask
+      Index: 18
+      Type: 8
+      Channel: mask
+    OutputTexture: {fileID: 2800000, guid: 4357c7c1f9ce7d84ca380ded9836d18d, type: 3}
+    sRGB: 0
+    IsVirtual: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 4
+    MaterialTextureTarget: _MaskMap
+  HasPhysicalSize: 0
+  PhysicalSize: {x: 0, y: 0, z: 0}
+  EnablePhysicalSize: 0
+  Thumbnail: 
+  HasThumbnail: 0
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://CloverMaterial\" label=\"\" >\n 
+    <presetinput identifier=\"$outputsize\" uid=\"2678659393\" type=\"8\" value=\"10,10\"
+    />\n  <presetinput identifier=\"target_color_1\" uid=\"4230762441\" type=\"2\"
+    value=\"0.200783,0.301887,0.270292\" />\n </sbspreset>\n"
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 0
+  GenerateAllMipmaps: 1
+  OutputMaterial: {fileID: 2100000, guid: 28a747c414bd4d64fac17af6251a30ee, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://CloverMaterial\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"2678659393\" type=\"8\" value=\"10,10\" />\n
+    </sbspreset>\n"
+  MaterialShader: HDRP/Lit
+  RenderTextures: 0
+  OutputRemaped: 0
+  Presets: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8280727310722662402
+      type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        Description:
+          Identifier: $outputsize
+          Label: $outputsize
+          GuiGroup: 
+          GuiDescription: 
+          Type: 5
+          WidgetType: 0
+        Data: {x: 10, y: 10}
+        NumericalDescription:
+          DefaultValue: {x: 8, y: 8}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662403
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        Description:
+          Identifier: $randomseed
+          Label: $randomseed
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 0
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662404
+      type: {class: SubstanceInputFloat3, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: target_color_1
+          Label: Color Replace - Target Color
+          GuiGroup: 
+          GuiDescription: 
+          Type: 2
+          WidgetType: 3
+        Data: {x: 0.20078321, y: 0.3018868, z: 0.27029192}
+        NumericalDescription:
+          DefaultValue: {x: 0.239216, y: 0.301961, z: 0.282353}
+          MinValue: {x: 0, y: 0, z: 0}
+          MaxValue: {x: 0, y: 0, z: 0}
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662405
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: luminosity_variation_2
+          Label: Color Replace - Luminosity Variation
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.78
+        NumericalDescription:
+          DefaultValue: 0.78
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662406
+      type: {class: SubstanceInputFloat2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: mask_range_color_3
+          Label: Color Replace - Mask Range
+          GuiGroup: 
+          GuiDescription: 
+          Type: 1
+          WidgetType: 1
+        Data: {x: 0.5, y: 0.5}
+        NumericalDescription:
+          DefaultValue: {x: 0.5, y: 0.5}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662407
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: mask_blur_intensity_4
+          Label: Color Replace - Mask Blur
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 3
+        NumericalDescription:
+          DefaultValue: 3
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662408
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 6
+        Description:
+          Identifier: mask_smoothness_5
+          Label: Color Replace - Mask Smoothness
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 8280727310722662409
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 7
+        Description:
+          Identifier: mask_expand_6
+          Label: Color Replace - Mask Expand
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.08
+        NumericalDescription:
+          DefaultValue: 0.08
+          MinValue: -1
+          MaxValue: 1
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
