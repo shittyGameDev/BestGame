@@ -45,6 +45,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower2
       objectReference: {fileID: 0}
+    - target: {fileID: 3673863213886380781, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689727207297317800, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8733966934155528430, guid: 50fb9954efaa36d4185ca8dc24a5ccd8,
         type: 3}
       propertyPath: m_LocalPosition.x
