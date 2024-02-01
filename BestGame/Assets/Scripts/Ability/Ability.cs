@@ -13,7 +13,7 @@ public class Ability : MonoBehaviour
             FollowMouse();
             if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement())
             {
-                PlacePrefab();
+                PlacePrefab(); // Place the prefab at the current mouse position
             }
         }
     }
