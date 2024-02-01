@@ -124,3 +124,5 @@ MonoBehaviour:
   goldPerSecond: 1
   goldInterval: 5
   goldCollected: 0
+  towerCost: 2
+  towerHealth: 10
