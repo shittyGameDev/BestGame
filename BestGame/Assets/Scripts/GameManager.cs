@@ -30,14 +30,18 @@ public class GameManager : MonoBehaviour
             if (state == GameState.Playing)
             {
                 UpdateGameState(GameState.Paused);
+                Debug.Log("Game Paused");
             }
             else if (state == GameState.Paused)
             {
                 UpdateGameState(GameState.Playing);
+                Debug.Log("Game Resumed");
             }
         }
     }
 
+
+    //Simple state machine to update the game state
     public void UpdateGameState(GameState newState)
     {
         this.state = newState;
