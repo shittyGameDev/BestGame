@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -9,8 +10,20 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private int activeEnemies = 0;
     private float lastSpawnTime;
 
+    [SerializeField] private Transform[] spawnPoints;
+
     void Start()
     {
+        spawnPoints = GetComponentsInChildren<Transform>().Where(t => t != this.transform).ToArray();
+
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("No spawn points found");
+            return;
+        }
+
+        Debug.Log("Number of spawn points: " + spawnPoints.Length);
+
         if (waves.Count > 0)
         {
             StartCoroutine(SpawnWave(waves[currentWaveIndex]));
@@ -23,9 +36,10 @@ public class WaveSpawner : MonoBehaviour
         {
             for (int i = 0; i < set.amount; i++)
             {
-                Vector3 randomOffset = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-5f, 5f));
-                GameObject enemy = Instantiate(set.enemyPrefab, transform.position + randomOffset, Quaternion.identity);
+                Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                GameObject enemy = Instantiate(set.enemyPrefab, spawnPoint.position, spawnPoint.rotation);
                 Enemy enemyScript = enemy.GetComponent<Enemy>();
+
                 if (enemyScript != null)
                 {
                     enemyScript.OnDeath += OnEnemyDeath;
