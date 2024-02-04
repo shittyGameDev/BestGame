@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 5904183445220234918}
   - component: {fileID: 1457654092650647489}
   - component: {fileID: 3068567138274062840}
-  - component: {fileID: -6828114825277809052}
+  - component: {fileID: 545641047978402989}
   m_Layer: 0
   m_Name: Tower1
   m_TagString: Untagged
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalOffset: 140
---- !u!114 &-6828114825277809052
+--- !u!114 &545641047978402989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,9 +347,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3597357464010090516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d3e6a311e16c54ca701e15ebeb6e60, type: 3}
+  m_Script: {fileID: 11500000, guid: f7f8344ede79a1e4da3c0a65be4c5dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 1756918835979552685, guid: d38c80602cf1c6a4e9478d2d3f0d5a7c,
+    type: 3}
+  validMaterial: {fileID: 2100000, guid: faa760141cabc4440ae64ad870748392, type: 2}
+  invalidMaterial: {fileID: 2100000, guid: ec0c41501cfb1154da2c53381bbf7b7e, type: 2}
 --- !u!1 &5723259405675797493
 GameObject:
   m_ObjectHideFlags: 0
