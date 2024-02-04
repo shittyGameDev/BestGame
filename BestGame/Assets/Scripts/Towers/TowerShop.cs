@@ -25,13 +25,14 @@ public class TowerShop : MonoBehaviour
     }
     void Update()
     {
+        if (isPrefabFollowingMouse && tempPrefabInstance != null)
         {
             FollowMouse();
             if (Input.GetMouseButtonDown(0))
             {
                 if (!IsPointerOverUIElement() && canPlacePrefab)
                 {
-                    Debug.Log("Placing Prefab"); // Debug log
+                    Debug.Log("Placing Prefab");
                     PlacePrefab();
                     isPrefabFollowingMouse = false;
                     canPlacePrefab = false;
