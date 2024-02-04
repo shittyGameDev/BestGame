@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
 {
     public int damage = 1;
     public float speed = 10f;
-    public float range = 5f;
     public Transform target;
 
     private Vector3 startPosition;
@@ -22,10 +21,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null)
         {
-            if (Vector3.Distance(startPosition, transform.position) >= range)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
             return;
         }
 

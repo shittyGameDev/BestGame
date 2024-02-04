@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1850988854537341816}
   - component: {fileID: 6539940505620378963}
   - component: {fileID: 8709246531363593723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoldTower
   m_TagString: GoldMine
   m_Icon: {fileID: 0}

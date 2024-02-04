@@ -43,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
                 if (enemyScript != null)
                 {
                     enemyScript.OnDeath += OnEnemyDeath;
-                    activeEnemies++; // Increment activeEnemies for each enemy spawned
+                    activeEnemies++;
                     Debug.Log("Enemy script subscribed");
                 }
 
