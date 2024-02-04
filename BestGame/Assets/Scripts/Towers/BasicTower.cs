@@ -25,9 +25,19 @@ public class BasicTower : MonoBehaviour
 
     void Update()
     {
-        if (canShoot)
+        if (target != null)
         {
-            Shoot();
+            // Update the tower's rotation to face the target
+            Vector3 dir = target.position - transform.position;
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+            // Check if the tower can shoot
+            if (canShoot)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -66,6 +76,7 @@ public class BasicTower : MonoBehaviour
         {
             fireCountdown = 0f;
             GameObject bulletGO = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            Debug.Log("Bullet instantiated towards: " + bulletGO.transform.forward); // Add this line for debugging
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             if (bullet != null)
             {
