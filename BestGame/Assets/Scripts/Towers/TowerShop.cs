@@ -9,7 +9,9 @@ public class TowerShop : MonoBehaviour
     private bool isPrefabFollowingMouse = false;
     private bool canPlacePrefab = false;
 
+    
     private Material defaultMaterial;
+    [Header("Materials")]
     public Material validMaterial;
     public Material invalidMaterial;
 
@@ -47,6 +49,7 @@ public class TowerShop : MonoBehaviour
         StartPlacingTower();
     }
 
+
     public void StartPlacingTower()
     {
         if (tempPrefabInstance == null)
@@ -69,8 +72,8 @@ public class TowerShop : MonoBehaviour
             // Check if the raycast hit object has the tag "Ground"
             if (hit.collider.CompareTag("Ground"))
             {
-                // Adding an offset to the y-coordinate
-                Vector3 prefabPosition = hit.point + new Vector3(0, 1, 0); // Adjust the 0.5f value as needed
+                // Adding an offset to the y-coordinate based on the prefab's height
+                Vector3 prefabPosition = hit.point + new Vector3(0, prefabMeshRenderer.bounds.size.y / 2, 0);
                 tempPrefabInstance.transform.position = prefabPosition;
                 canPlacePrefab = true;
                 prefabMeshRenderer.material = validMaterial;
