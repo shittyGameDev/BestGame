@@ -1,8 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : MonoBehaviour
+public class TowerShop : MonoBehaviour
 {
-    public GameObject abilityPrefab;
+    public GameObject towerPrefab;
     private GameObject tempPrefabInstance;
     private bool isPrefabFollowingMouse = false;
     private bool canPlacePrefab = false;
@@ -17,31 +19,42 @@ public class Ability : MonoBehaviour
 
     void Start()
     {
-        rend = abilityPrefab.GetComponent<Renderer>();
+        rend = towerPrefab.GetComponent<Renderer>();
         defaultMaterial = rend.sharedMaterial;
 
     }
     void Update()
     {
-        if (isPrefabFollowingMouse)
         {
             FollowMouse();
-            if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement() && canPlacePrefab)
+            if (Input.GetMouseButtonDown(0))
             {
-                PlacePrefab(); // Place the prefab at the current mouse position
-                isPrefabFollowingMouse = false;
+                if (!IsPointerOverUIElement() && canPlacePrefab)
+                {
+                    Debug.Log("Placing Prefab"); // Debug log
+                    PlacePrefab();
+                    isPrefabFollowingMouse = false;
+                    canPlacePrefab = false;
+                }
             }
         }
     }
 
-    // Call this from the UI button
-    public void StartPlacingAbility()
+
+    void OnMouseDown()
+    {
+        StartPlacingTower();
+    }
+
+    public void StartPlacingTower()
     {
         if (tempPrefabInstance == null)
         {
-            tempPrefabInstance = Instantiate(abilityPrefab);
+            tempPrefabInstance = Instantiate(towerPrefab);
             prefabMeshRenderer = tempPrefabInstance.GetComponent<MeshRenderer>();
             isPrefabFollowingMouse = true;
+
+            FollowMouse();
         }
     }
 
@@ -75,8 +88,9 @@ public class Ability : MonoBehaviour
         if (!canPlacePrefab)
         {
             Destroy(tempPrefabInstance);
+
         }
-        
+
         prefabMeshRenderer.material = defaultMaterial;
         isPrefabFollowingMouse = false;
         tempPrefabInstance = null;
