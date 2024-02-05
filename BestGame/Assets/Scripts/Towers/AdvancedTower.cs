@@ -2,42 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicTower : MonoBehaviour
+public class AdvancedTower : MonoBehaviour
 {
-    // Tower Attributes
-    [Header("Tower Attributes")]
-    public int cost = 5;
-    public float turnSpeed = 10f;
-    public int damage = 1;
-    public int health = 10;
-    public float range = 5f;
-    public float fireRate = 1f;
+    public int cost = 15;
+    public float turnSpeed = 5f;
+    public int damage = 3;
+    public int health = 20;
+    public float range = 10f;
+    public float fireRate = 0.5f;
     public float fireCountdown = 0f;
     public GameObject bulletPrefab;
 
     private Transform target;
     private bool canShoot = false;
-
+    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("FindTarget", 0f, 0.5f);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (canShoot)
         {
-            // Update the tower's rotation to face the target
-            Vector3 dir = target.position - transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-            transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-            // Check if the tower can shoot
-            if (canShoot)
-            {
-                Shoot();
-            }
+            Shoot();
         }
     }
 
@@ -69,14 +58,13 @@ public class BasicTower : MonoBehaviour
         }
     }
 
-    private void Shoot()
+        private void Shoot()
     {
         fireCountdown += Time.deltaTime;
         if (fireCountdown >= fireRate)
         {
             fireCountdown = 0f;
             GameObject bulletGO = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            Debug.Log("Bullet instantiated towards: " + bulletGO.transform.forward); // Add this line for debugging
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             if (bullet != null)
             {
