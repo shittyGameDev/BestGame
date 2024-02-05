@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:BestGame/Assets/3DEnviromentAssets/Rocks/Rocks.mat.meta
-guid: 634c11b68a19594498a9ae493e2c28d9
-========
 guid: 3311fc2b3043c55458cba36f0ea80e6c
->>>>>>>> main:BestGame/Assets/Scenes/Level1/NavMesh-NavMesh Surface.asset.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 23800000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
