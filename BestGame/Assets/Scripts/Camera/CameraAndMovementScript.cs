@@ -15,18 +15,27 @@ public class CameraAndMovementScript : MonoBehaviour
 
         debugSphereCollissionDetection = debugMousePositionSphere.GetComponent<DebugSphereCollissionDetection>();
 
+        topRightBorderCorner = topRightCornerT.position;
+        bottomLeftBorderCorner = BottomLeftCornerT.position;
     }
 
     public Rigidbody RigidBodyOFCameraMover;
   
 
-    [Header("DebugSphere")]
+    [Header("DebugSphere")]//
 
     public Transform debugMousePositionSphere;
     public Material debugCorrectMaterial;
     public Material debugWrongMaterial;
     public MeshRenderer sphereMeshRenderer;
+    //
+    [Header("Camera Movement Borders")]//
+    private Vector3 bottomLeftBorderCorner;
+    private Vector3 topRightBorderCorner;
 
+    public Transform topRightCornerT;
+    public Transform BottomLeftCornerT;
+    //
 
     void Update()
     {
@@ -72,11 +81,59 @@ public class CameraAndMovementScript : MonoBehaviour
         RigidBodyOFCameraMover.MovePosition(RigidBodyOFCameraMover.position+inputDir*moveSpeed*Time.fixedDeltaTime);
         
         
+        //
+
+        
+        
+        
 
     }
     private void moveCamera()
     {
-        transform.position = Vector3.Lerp(transform.position, RigidBodyOFCameraMover.transform.position,smoothing*Time.deltaTime);
+        Transform tR = RigidBodyOFCameraMover.transform;
+        
+        // if(tR.position.x<bottomLeftBorderCorner.x)
+        // {
+        //     tR.position+=new Vector3(0.1f,0,0);
+        // }
+        // if(tR.position.x>topRightBorderCorner.x)
+        // {
+        //     tR.position-=new Vector3(0.1f,0,0);
+        // }
+
+        // if(tR.position.z<bottomLeftBorderCorner.z)
+        // {
+        //     tR.position+=new Vector3(0,0,0.1f);
+        // }
+        // if(tR.position.z>topRightBorderCorner.z)
+        // {
+        //     tR.position-=new Vector3(0,0,0.1f);
+        // }
+
+        // if(tR.position.x<bottomLeftBorderCorner.x)
+        // {
+        //     tR.position=new Vector3(bottomLeftBorderCorner.x+0.01f,tR.position.y,tR.position.z);
+        // }
+        // if(tR.position.x>topRightBorderCorner.x)
+        // {
+        //     //tR.position-=new Vector3(0.1f,0,0);
+        //     tR.position=new Vector3(bottomLeftBorderCorner.x-0.01f,tR.position.y,tR.position.z);
+        // }
+
+        // if(tR.position.z<bottomLeftBorderCorner.z)
+        // {
+        //     //tR.position+=new Vector3(0,0,0.1f);
+        //     tR.position=new Vector3(tR.position.x,tR.position.y,bottomLeftBorderCorner.x+0.01f);
+        // }
+        // if(tR.position.z>topRightBorderCorner.z)
+        // {
+        //     //tR.position-=new Vector3(0,0,0.1f);
+        //     tR.position=new Vector3(tR.position.x,tR.position.y,bottomLeftBorderCorner.x-0.01f);
+        // }
+
+
+
+        //transform.position = Vector3.Lerp(transform.position, RigidBodyOFCameraMover.transform.position,smoothing*Time.deltaTime);
     }
     
     private DebugSphereCollissionDetection debugSphereCollissionDetection;
