@@ -8,7 +8,7 @@ public class GoldTower : MonoBehaviour
     //Header for inspector gold variables
     [Header("Gold Variables")]
     public int gold;
-    public int goldPerSecond = 1;
+    public int goldPerInterval = 1;
     private float goldTimer; // time since last gold payment
     [SerializeField] private float goldInterval = 5f; // time between gold payments
 
@@ -41,7 +41,7 @@ public class GoldTower : MonoBehaviour
         {
             goldTimer = 0f;
             
-            gold += goldPerSecond;
+            gold += goldPerInterval;
 
         }
         yield return null;
