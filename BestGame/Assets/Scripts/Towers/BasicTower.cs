@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicTower : MonoBehaviour
+public class BasicTower : TowerBase
 {
     // Tower Attributes
     [Header("Tower Attributes")]
-    public int cost = 5;
     public float turnSpeed = 10f;
     public int damage = 1;
     public int health = 10;
@@ -20,6 +19,7 @@ public class BasicTower : MonoBehaviour
 
     void Start()
     {
+        cost = 10;
         InvokeRepeating("FindTarget", 0f, 0.5f);
     }
 
@@ -76,7 +76,6 @@ public class BasicTower : MonoBehaviour
         {
             fireCountdown = 0f;
             GameObject bulletGO = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            Debug.Log("Bullet instantiated towards: " + bulletGO.transform.forward); // Add this line for debugging
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             if (bullet != null)
             {

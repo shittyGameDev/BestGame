@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35e25e259e1dea54cbcbe64e36ab52b1, type: 3}
-  m_Name: Tower2
+  m_Name: BasicTowerData
   m_EditorClassIdentifier: 
-  brickName: Not Basic Tower
-  brickDescription: This is the second most basic tower
-  brickImage: {fileID: 21300000, guid: 47f1d70140f7ca0419d587441467edd7, type: 3}
-  brickPrice: 2
+  brickName: Basic Tower
+  brickDescription: The peashooter is mostly useless
+  brickImage: {fileID: 21300000, guid: bdfa278d36fba0540afe88656b6a301b, type: 3}
+  brickPrice: 10
   brickHealth: 10
-  brickDamage: 3
+  brickDamage: 2

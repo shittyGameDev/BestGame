@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldTower : MonoBehaviour
+public class GoldTower : TowerBase
 {
     //Header for inspector gold variables
     [Header("Gold Variables")]
@@ -16,16 +16,14 @@ public class GoldTower : MonoBehaviour
 
     //Header for inspector tower variables
     [Header("Tower Variables")]
-    public int towerCost = 2;
+    public int towerCost = 20;
     public int towerHealth = 10;
-    
-
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        cost = towerCost;
     }
 
     // Update is called once per frame
