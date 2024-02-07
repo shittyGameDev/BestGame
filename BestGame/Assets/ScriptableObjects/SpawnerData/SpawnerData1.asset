@@ -22,4 +22,4 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 8383261764026937619, guid: ef0041248f3d0594eaa6f7892030fe0d,
       type: 3}
     amount: 3
-  timeBetweenSets: 20
+  timeBetweenSets: 10

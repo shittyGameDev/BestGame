@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
-  goldPerSecond: 1
+  goldPerInterval: 1
   goldInterval: 5
   goldCollected: 0
-  towerCost: 2
+  towerCost: 20
   towerHealth: 10

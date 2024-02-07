@@ -24,9 +24,31 @@ public class WaveSpawner : MonoBehaviour
 
         Debug.Log("Number of spawn points: " + spawnPoints.Length);
 
-        if (waves.Count > 0)
+        StartCoroutine(CheckForGoldMine());
+    }
+
+    IEnumerator CheckForGoldMine()
+    {
+        while (true)
         {
-            StartCoroutine(SpawnWave(waves[currentWaveIndex]));
+            TowerBase[] goldMines = GameObject.FindGameObjectsWithTag("GoldMine")
+                .Select(obj => obj.GetComponent<TowerBase>())
+                .Where(goldMine => goldMine != null && goldMine.IsActive)
+                .ToArray();
+
+            if (goldMines.Length > 0)
+            {
+                // Goldmine is now active, start spawning waves
+                if (waves.Count > 0)
+                {
+                    GameManager.Instance.StartGame();
+                    yield return new WaitForSeconds(10f);
+                    StartCoroutine(SpawnWave(waves[currentWaveIndex]));
+                }
+                yield break;
+            }
+
+            yield return new WaitForSeconds(1f); // Check every second
         }
     }
 
@@ -82,6 +104,11 @@ public class WaveSpawner : MonoBehaviour
     bool TimePassedSinceLastSpawn(float timeBetweenSets)
     {
         return Time.time >= lastSpawnTime + timeBetweenSets;
+    }
+
+    bool IsGoldTowerActive()
+    {
+        return GameObject.FindGameObjectsWithTag("GoldMine").Length > 0;
     }
 
 }

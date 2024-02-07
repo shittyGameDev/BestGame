@@ -9,7 +9,7 @@ public class TowerShop : MonoBehaviour
     private bool isPrefabFollowingMouse = false;
     private bool canPlacePrefab = false;
 
-    
+
     private Material defaultMaterial;
     [Header("Materials")]
     public Material validMaterial;
@@ -89,15 +89,24 @@ public class TowerShop : MonoBehaviour
 
     private void PlacePrefab()
     {
-        if (!canPlacePrefab)
+        if (canPlacePrefab)
+        {
+            TowerBase towerBase = tempPrefabInstance.GetComponent<TowerBase>();
+            if (towerBase != null)
+            {
+                GameManager.Instance.SpendGold(towerBase.cost);
+                towerBase.ActivateTower(); // Activate the tower
+                Debug.Log("Tower placed");
+            }
+
+            prefabMeshRenderer.material = defaultMaterial;
+            isPrefabFollowingMouse = false;
+            tempPrefabInstance = null;
+        }
+        else
         {
             Destroy(tempPrefabInstance);
-
         }
-
-        prefabMeshRenderer.material = defaultMaterial;
-        isPrefabFollowingMouse = false;
-        tempPrefabInstance = null;
     }
 
     // Utility method to check if the pointer is over a UI element

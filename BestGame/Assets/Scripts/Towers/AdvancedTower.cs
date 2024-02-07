@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdvancedTower : MonoBehaviour
+public class AdvancedTower : TowerBase
 {
-    public int cost = 15;
     public float turnSpeed = 5f;
     public int damage = 3;
     public int health = 20;
@@ -18,6 +17,7 @@ public class AdvancedTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cost = 25;
         InvokeRepeating("FindTarget", 0f, 0.5f);
     }
 

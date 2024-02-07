@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35e25e259e1dea54cbcbe64e36ab52b1, type: 3}
-  m_Name: Tower3
+  m_Name: AdvancedTowerData
   m_EditorClassIdentifier: 
-  brickName: Common Tower
-  brickDescription: This is the least basic tower
+  brickName: Advanced Tower
+  brickDescription: The advanced tower is more advanced than basic tower
   brickImage: {fileID: 21300000, guid: df3e56bcc2298f045b77f392c4549251, type: 3}
-  brickPrice: 2
-  brickHealth: 10
-  brickDamage: 3
+  brickPrice: 25
+  brickHealth: 20
+  brickDamage: 5

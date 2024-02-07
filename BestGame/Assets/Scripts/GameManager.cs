@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance;
     public GameState state;
 
@@ -12,14 +14,26 @@ public class GameManager : MonoBehaviour
 
     public int Gold { get; private set; }
 
-    private void Awake()
+    [Header("UI Elements")]
+    [SerializeField] private TextMeshProUGUI countDownText;
+    public int countDown = 10;
+
+    void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
     {
+        Gold = 29;
         UpdateGameState(GameState.Playing);
     }
 
@@ -73,6 +87,23 @@ public class GameManager : MonoBehaviour
     public void SpendGold(int amount)
     {
         Gold -= amount;
+        Debug.Log("Gold: " + Gold);
+    }
+
+    public void StartGame(){
+        StartCoroutine(StartCountDown());
+    }
+    
+    IEnumerator StartCountDown(){
+        countDownText.gameObject.SetActive(true);
+        while(countDown > 0){
+            countDownText.text = "Game starts in " + countDown.ToString();
+            yield return new WaitForSeconds(1f);
+            countDown--;
+        }
+        countDownText.text = "GO!";
+        yield return new WaitForSeconds(1f);
+        countDownText.gameObject.SetActive(false);
     }
 }
 
