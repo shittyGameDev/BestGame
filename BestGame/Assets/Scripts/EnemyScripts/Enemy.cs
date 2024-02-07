@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private int _health = 20;
     public delegate void EnemyDeath(Enemy enemy);
 
     public event EnemyDeath OnDeath;
@@ -27,6 +28,13 @@ public class Enemy : MonoBehaviour
     private void OnMouseDown()
     {
         Die();
+    }
+
+    public void TakeDamage(int damage){
+        _health -= damage;
+        if(_health <= 0){
+            Die();
+        }
     }
 
 }
