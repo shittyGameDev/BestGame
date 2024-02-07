@@ -42,8 +42,11 @@ public class WaveSpawner : MonoBehaviour
                 if (waves.Count > 0)
                 {
                     GameManager.Instance.StartGame();
-                    yield return new WaitForSeconds(10f);
-                    StartCoroutine(SpawnWave(waves[currentWaveIndex]));
+                    yield return new WaitForSeconds(GameManager.Instance.countDown); // Wait for the game to start
+                    if (GameManager.Instance.state == GameState.Playing)
+                    {
+                        StartCoroutine(SpawnWave(waves[currentWaveIndex]));
+                    }
                 }
                 yield break;
             }

@@ -89,7 +89,7 @@ public class TowerShop : MonoBehaviour
 
     private void PlacePrefab()
     {
-        if (canPlacePrefab)
+        if (canPlacePrefab && CanPlaceOtherTowers())
         {
             TowerBase towerBase = tempPrefabInstance.GetComponent<TowerBase>();
             if (towerBase != null)
@@ -106,6 +106,8 @@ public class TowerShop : MonoBehaviour
         else
         {
             Destroy(tempPrefabInstance);
+            tempPrefabInstance = null;
+            isPrefabFollowingMouse = false;
         }
     }
 
@@ -113,5 +115,11 @@ public class TowerShop : MonoBehaviour
     private bool IsPointerOverUIElement()
     {
         return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
+
+    private bool CanPlaceOtherTowers()
+    {
+        GoldTower goldTower = FindObjectOfType<GoldTower>();
+        return tempPrefabInstance.GetComponent<GoldTower>() != null || goldTower != null;
     }
 }
