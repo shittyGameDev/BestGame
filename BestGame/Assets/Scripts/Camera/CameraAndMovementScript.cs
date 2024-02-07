@@ -20,7 +20,7 @@ public class CameraAndMovementScript : MonoBehaviour
     }
 
     public Rigidbody RigidBodyOFCameraMover;
-  
+
 
     [Header("DebugSphere")]//
 
@@ -39,10 +39,14 @@ public class CameraAndMovementScript : MonoBehaviour
 
     void Update()
     {
-        CameraHitPosCalc();
+        if (debugSphereCollissionDetection.colliders != null)
+        {
+            CameraHitPosCalc();
+        }
+
         moveCamera();
-        
-        
+
+
     }
     void FixedUpdate()
     {
@@ -51,47 +55,47 @@ public class CameraAndMovementScript : MonoBehaviour
     }
     [Header("Movement:")]
     public float moveSpeed;
-    public float smoothing=2;
+    public float smoothing = 2;
     private Vector3 moveDir;
     private void movePlayer()
     {
         Vector3 inputDir = Vector3.zero;
-        if(Input.GetKey("w"))
+        if (Input.GetKey("w"))
         {
-            inputDir+=Vector3.forward;
+            inputDir += Vector3.forward;
         }
-        if(Input.GetKey("s"))
+        if (Input.GetKey("s"))
         {
-            inputDir-=Vector3.forward;
+            inputDir -= Vector3.forward;
         }
-        if(Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
-            inputDir+=Vector3.right;
+            inputDir += Vector3.right;
         }
-        if(Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
-            inputDir-=Vector3.right;
+            inputDir -= Vector3.right;
         }
         inputDir = inputDir.normalized;
-        if(Input.GetKey("left shift"))
+        if (Input.GetKey("left shift"))
         {
-            inputDir*=2f;
+            inputDir *= 2f;
         }
         //moveDir = Vector3.Lerp(moveDir,inputDir)
-        RigidBodyOFCameraMover.MovePosition(RigidBodyOFCameraMover.position+inputDir*moveSpeed*Time.fixedDeltaTime);
-        
-        
+        RigidBodyOFCameraMover.MovePosition(RigidBodyOFCameraMover.position + inputDir * moveSpeed * Time.fixedDeltaTime);
+
+
         //
 
-        
-        
-        
+
+
+
 
     }
     private void moveCamera()
     {
         Transform tR = RigidBodyOFCameraMover.transform;
-        
+
         // if(tR.position.x<bottomLeftBorderCorner.x)
         // {
         //     tR.position+=new Vector3(0.1f,0,0);
@@ -135,7 +139,7 @@ public class CameraAndMovementScript : MonoBehaviour
 
         //transform.position = Vector3.Lerp(transform.position, RigidBodyOFCameraMover.transform.position,smoothing*Time.deltaTime);
     }
-    
+
     private DebugSphereCollissionDetection debugSphereCollissionDetection;
 
 
@@ -143,33 +147,39 @@ public class CameraAndMovementScript : MonoBehaviour
 
     private void CameraHitPosCalc()
     {
-        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 200))
         {
-            if(hit.transform!=debugMousePositionSphere)
-            debugMousePositionSphere.position = hit.point;
+            if (hit.transform != null && hit.transform != debugMousePositionSphere)
+            {
+                debugMousePositionSphere.position = hit.point;
+            }
         }
 
-        foreach(Collider c in debugSphereCollissionDetection.colliders)
+        if (debugSphereCollissionDetection.colliders != null)
         {
-            if(c.transform.tag=="Ground")
+            foreach (Collider c in debugSphereCollissionDetection.colliders)
             {
-                sphereMeshRenderer.material = debugCorrectMaterial;
-            }
-            else if(c.transform.tag=="PlacementObst")
-            {
-                sphereMeshRenderer.material = debugWrongMaterial;
-                return;
-            }
+                // Check if the collider is null or has been destroyed
+                if (c == null || c.gameObject == null)
+                {
+                    continue; // Skip the current iteration if the collider is invalid
+                }
 
+                if (c.transform.tag == "Ground")
+                {
+                    sphereMeshRenderer.material = debugCorrectMaterial;
+                }
+                else if (c.transform.tag == "PlacementObst")
+                {
+                    sphereMeshRenderer.material = debugWrongMaterial;
+                    return;
+                }
+            }
         }
-
-
-        
-
-        
     }
+
 
 }
